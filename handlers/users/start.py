@@ -9,6 +9,7 @@ from loader import dp,user_db,bot
 async def bot_start(message: types.Message):
    try:
        telegram_id=message.from_user.id
+       username=message.from_user.username
        if not user_db.select_user(telegram_id=telegram_id):
            user_db.add_user(telegram_id=telegram_id,username=username)
 
